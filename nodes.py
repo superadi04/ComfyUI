@@ -292,6 +292,10 @@ class VAEEncode:
 
     def encode(self, vae, pixels):
         print("HALLO HALLO")
+        for attribute in dir(vae):
+            if not attribute.startswith('__'):
+                print(f"{attribute}: {getattr(vae, attribute)}")
+                
         print(vae.first_stage_model)
         t = vae.encode(pixels[:,:,:,:3])
         return ({"samples":t}, )
