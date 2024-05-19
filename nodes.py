@@ -1342,8 +1342,12 @@ class KSampler:
 
     def sample(self, model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=1.0):
         print("BYE BYE")
+        print("positive")
         print(positive)
+        print("negative")
         print(negative)
+        print('latent')
+        print(latent_image)
         print(seed)
         return common_ksampler(model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=denoise)
 
