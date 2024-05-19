@@ -291,12 +291,6 @@ class VAEEncode:
     CATEGORY = "latent"
 
     def encode(self, vae, pixels):
-        print("HALLO HALLO")
-        for attribute in dir(vae):
-            if not attribute.startswith('__'):
-                print(f"{attribute}: {getattr(vae, attribute)}")
-                
-        print(vae.first_stage_model)
         t = vae.encode(pixels[:,:,:,:3])
         return ({"samples":t}, )
 
@@ -1347,6 +1341,10 @@ class KSampler:
     CATEGORY = "sampling"
 
     def sample(self, model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=1.0):
+        print("BYE BYE")
+        print(positive)
+        print(negative)
+        print(seed)
         return common_ksampler(model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=denoise)
 
 class KSamplerAdvanced:
