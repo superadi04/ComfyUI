@@ -292,7 +292,7 @@ class VAEEncode:
 
     def encode(self, vae, pixels):
         print("HALLO HALLO")
-        print(vae.config)
+        print(vae.first_stage_model)
         t = vae.encode(pixels[:,:,:,:3])
         return ({"samples":t}, )
 
