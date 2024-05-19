@@ -291,6 +291,8 @@ class VAEEncode:
     CATEGORY = "latent"
 
     def encode(self, vae, pixels):
+        print("HALLO HALLO")
+        print(vae)
         t = vae.encode(pixels[:,:,:,:3])
         return ({"samples":t}, )
 
